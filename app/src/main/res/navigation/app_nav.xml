@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/splashScreenFragment">
+
+
+    <fragment
+        android:id="@+id/newsFeedFragment"
+        android:name="com.example.buildfromgroundapp.feature.news.presentation.ui.NewsFeedFragment"
+        android:label="news_feed_fragment">
+        <action
+            android:id="@+id/action_newsFeedFragment_to_starWarFeedFragment"
+            app:destination="@id/starWarFeedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.buildfromgroundapp.core.ui.SplashScreenFragment"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashFeedFragment_to_newsFeedFragment"
+            app:destination="@id/newsFeedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/starWarFeedFragment"
+        android:name="com.example.buildfromgroundapp.feature.startWar.presentation.ui.StarWarFeedFragment"
+        android:label="SplashScreen" >
+        <argument
+            android:name="newsArticleArg"
+            app:argType="com.example.buildfromgroundapp.feature.news.data.model.domain.Article" />
+    </fragment>
+
+</navigation>
